@@ -81,7 +81,7 @@ class _MainPageState extends State<MainPage> {
   final List<Item> _items = [];
   int _nextId = 1;
 
-  // CREATE
+  // create
   void _addItem(Item newItem) {
     setState(() {
       newItem.id = (_nextId++).toString();
