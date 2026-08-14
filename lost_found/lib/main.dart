@@ -35,10 +35,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
-// COLORS
-// ---------------------------------------------------------------------------
-
 class AppColors {
   static const header = Color(0xFFFA6781);
   static const lostBadge = Color.fromARGB(255, 175, 48, 48);
@@ -49,9 +45,7 @@ class AppColors {
   static const background = Color(0xFFFAE7CB);
 }
 
-// ---------------------------------------------------------------------------
-// MODEL
-// ---------------------------------------------------------------------------
+//main
 
 enum ItemStatus { lost, found }
 
@@ -73,9 +67,8 @@ class Item {
   });
 }
 
-// ---------------------------------------------------------------------------
-// HOME SCREEN (holds the in-memory list + all CRUD logic)
-// ---------------------------------------------------------------------------
+//mainpage
+
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -96,7 +89,7 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
-  // UPDATE
+  // upd
   void _updateItem(String id, Item updated) {
     setState(() {
       final index = _items.indexWhere((i) => i.id == id);
@@ -105,7 +98,7 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
-  // DELETE (triggered by the "Claim" / "Return" button)
+  // del
   void _deleteItem(String id) {
     setState(() {
       _items.removeWhere((i) => i.id == id);
@@ -248,7 +241,7 @@ class _MainPageState extends State<MainPage> {
               ],
             ),
             const SizedBox(height: 12),
-            // READ (empty-state handled here)
+            // read
             Expanded(
               child: _items.isEmpty
                   ? Center(
@@ -292,9 +285,7 @@ class _MainPageState extends State<MainPage> {
   }
 }
 
-// ---------------------------------------------------------------------------
-// CARD WIDGET (Lost/Found badge, pencil edit icon, Claim/Return delete button)
-// ---------------------------------------------------------------------------
+//card
 
 class ItemCard extends StatelessWidget {
   final Item item;
@@ -380,9 +371,7 @@ class ItemCard extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
-// SHARED CREATE/UPDATE DIALOG (with form validation)
-// ---------------------------------------------------------------------------
+//formvalidation
 
 class ItemFormDialog extends StatefulWidget {
   final Item? existing;
