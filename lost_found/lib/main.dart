@@ -339,19 +339,42 @@ class ItemCard extends StatelessWidget {
           const SizedBox(height: 5),
           const Divider(height: 0.5, thickness: 1, color: Colors.black26),
           const SizedBox(height: 8),
-          Text(
-            'Description: ${item.description}',
-            style: const TextStyle(
-              fontSize: 18,
-            )),
-          Text(
-            'Location: ${item.location}',
-             style: const TextStyle(
-              fontSize: 18)),
-          Text(
-            'Date: ${item.date}',
-           style: const TextStyle(
-              fontSize: 18)),
+          Text.rich(
+            TextSpan(
+              style: const TextStyle(fontSize: 18, color: Color.fromARGB(175, 0, 0, 0)),
+              children: [
+                const TextSpan(
+                  text: 'Description: ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: item.description, style: const TextStyle(color: Color.fromARGB(175, 0, 0, 0))),
+              ],
+            ),
+          ),
+          Text.rich(
+            TextSpan(
+              style: const TextStyle(fontSize: 18, color: Color.fromARGB(175, 0, 0, 0)),
+              children: [
+                const TextSpan(
+                  text: 'Location: ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: item.location, style: const TextStyle(color: Color.fromARGB(175, 0, 0, 0))),
+              ],
+            ),
+          ),
+          Text.rich(
+            TextSpan(
+              style: const TextStyle(fontSize: 18, color:  Color.fromARGB(175, 0, 0, 0)),
+              children: [
+                const TextSpan(
+                  text: 'Date: ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: item.date, style: const TextStyle(color: Color.fromARGB(175, 0, 0, 0))),
+              ],
+            ),
+          ),
           const SizedBox(height: 5),
           Align(
             alignment: Alignment.centerRight,
